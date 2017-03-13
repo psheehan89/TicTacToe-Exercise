@@ -30,31 +30,31 @@ function makeAMove(position) {
   //Take input from the current player
   switch(position) {
     case 'top left': 
-      move.topLeft = mark[turn];
+      move.topLeft === ' ' ? move.topLeft = mark[turn] : players[turn] === 1 ? turn = 1 : turn = 0;
       break;
     case 'top mid': 
-      move.topMid = mark[turn];
+      move.topMid === ' ' ? move.topMid = mark[turn] : players[turn] === 1 ? turn = 1 : turn = 0;
       break;
     case 'top right': 
-      move.topRight = mark[turn];
+      move.topRight === ' ' ? move.topRight = mark[turn] : players[turn] === 1 ? turn = 1 : turn = 0;
       break;
     case 'mid left': 
-      move.midLeft = mark[turn];
+      move.midLeft === ' ' ? move.midLeft = mark[turn] : players[turn] === 1 ? turn = 1 : turn = 0;
       break;
     case 'mid mid': 
-      move.midMid = mark[turn];
+      move.midMid === ' ' ? move.midMid = mark[turn] : players[turn] === 1 ? turn = 1 : turn = 0;
       break;
     case 'mid right': 
-      move.midRight = mark[turn];
+      move.midRight === ' ' ? move.midRight = mark[turn] : players[turn] === 1 ? turn = 1 : turn = 0;
       break;
     case 'bot left': 
-      move.botLeft = mark[turn];
+      move.botLeft === ' ' ? move.botLeft = mark[turn] : players[turn] === 1 ? turn = 1 : turn = 0;
       break;
     case 'bot mid': 
-      move.botMid = mark[turn];
+      move.botMid === ' ' ? move.botMid = mark[turn] : players[turn] === 1 ? turn = 1 : turn = 0;
       break;
     case 'bot right': 
-      move.botRight = mark[turn];
+      move.botRight === ' ' ? move.botRight = mark[turn] : players[turn] === 1 ? turn = 1 : turn = 0;
       break;
     default:
       console.log("That's not a valid move, please refer to the instructions")
