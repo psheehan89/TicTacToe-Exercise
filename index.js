@@ -54,12 +54,13 @@ function makeAMove(position) {
       move.botMid = mark[turn];
       break;
     case 'bot right': 
-      move.topRight = mark[turn];
+      move.botRight = mark[turn];
       break;
     default:
       console.log("That's not a valid move, please refer to the instructions")
+      players[turn] === 1 ? turn = 1 : turn = 0;
   }
-  
+
   //Update the board to include the players move
   board =          ' ' + move.topLeft + ' | ' + move.topMid + ' | ' + move.topRight + 
   '  \n-----------\n ' + move.midLeft + ' | ' + move.midMid + ' | ' + move.midRight + 
