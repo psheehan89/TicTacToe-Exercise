@@ -11,26 +11,66 @@ var move = {
   botRight: ' ' 
 }
 
+//Define players, turns, and marks
 var players = [1, 2]
-var turn = 1;
+var turn = 0;
 var mark = ['X', 'O']
-//Repeat these
-function makeAMove(position) {
-  //Create a board
-  var board =      ' ' + move.topLeft + ' | ' + move.topMid + ' | ' + move.topRight + 
-  '  \n-----------\n ' + move.midLeft + ' | ' + move.midMid + ' | ' + move.midRight + 
-  '  \n-----------\n ' + move.botLeft + ' | ' + move.botMid + ' | ' + move.botRight 
 
-  console.log(board)
+//Create a board
+var board =          ' ' + move.topLeft + ' | ' + move.topMid + ' | ' + move.topRight + 
+    '  \n-----------\n ' + move.midLeft + ' | ' + move.midMid + ' | ' + move.midRight + 
+    '  \n-----------\n ' + move.botLeft + ' | ' + move.botMid + ' | ' + move.botRight + '\n\n'
+
+console.log("INSTRUCTIONS: type makeAMove('row col') in order to place your mark where you have\nrows: top, mid, bot\ncols: left, mid, right\n\nIt's player " + players[turn] + "'s turn ("+ mark[turn] +")\n")
+console.log(board)
+
+//Create a move function
+function makeAMove(position) {
 
   //Indicate who's turn it is
   players[turn] === 2 ? turn = 0 : turn = 1;
-  console.log("\nIt's player " + players[turn] + "'s turn ("+ mark[turn] +")")
+  console.log("It's player " + players[turn] + "'s turn ("+ mark[turn] +")\n")
 
   //Take input from the current player
-  
+  switch(position) {
+    case 'top left': 
+      move.topLeft = mark[turn];
+      break;
+    case 'top mid': 
+      move.topMid = mark[turn];
+      break;
+    case 'top right': 
+      move.topRight = mark[turn];
+      break;
+    case 'mid left': 
+      move.midLeft = mark[turn];
+      break;
+    case 'mid mid': 
+      move.midMid = mark[turn];
+      break;
+    case 'mid right': 
+      move.midRight = mark[turn];
+      break;
+    case 'bot left': 
+      move.botLeft = mark[turn];
+      break;
+    case 'bot mid': 
+      move.botMid = mark[turn];
+      break;
+    case 'bot right': 
+      move.topRight = mark[turn];
+      break;
+    default:
+      console.log("That's not a valid move, please refer to the instructions")
+  }
+  board =          ' ' + move.topLeft + ' | ' + move.topMid + ' | ' + move.topRight + 
+  '  \n-----------\n ' + move.midLeft + ' | ' + move.midMid + ' | ' + move.midRight + 
+  '  \n-----------\n ' + move.botLeft + ' | ' + move.botMid + ' | ' + move.botRight + '\n\n'
+
   //Update the board to include the players move
+  console.log('\n' + board)
 }
 
 //Once a player has 3 in a row, declare that player the winner
+
 
