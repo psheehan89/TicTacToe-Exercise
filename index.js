@@ -27,10 +27,6 @@ console.log(board)
 //Create a move function
 function makeAMove(position) {
 
-  //Indicate who's turn it is
-  players[turn] === 2 ? turn = 0 : turn = 1;
-  console.log("It's player " + players[turn] + "'s turn ("+ mark[turn] +")\n")
-
   //Take input from the current player
   switch(position) {
     case 'top left': 
@@ -63,11 +59,17 @@ function makeAMove(position) {
     default:
       console.log("That's not a valid move, please refer to the instructions")
   }
+  
+  //Update the board to include the players move
   board =          ' ' + move.topLeft + ' | ' + move.topMid + ' | ' + move.topRight + 
   '  \n-----------\n ' + move.midLeft + ' | ' + move.midMid + ' | ' + move.midRight + 
   '  \n-----------\n ' + move.botLeft + ' | ' + move.botMid + ' | ' + move.botRight + '\n\n'
 
-  //Update the board to include the players move
+
+  //Indicate who's turn is next
+  players[turn] === 1 ? turn = 1 : turn = 0;
+  console.log("It's player " + players[turn] + "'s turn ("+ mark[turn] +")\n")
+
   console.log('\n' + board)
 }
 
